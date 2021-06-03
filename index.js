@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import tinderUsersRouter from './routes/TinderRoutes/tinderRouters.js';
+import cryptoRouter from './routes/CryptoRoutes/cryptoRoutes.js';
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ limit: '30mb', extended: true }));
 // App Routes
 app.get('/', (req, res) => res.send('Backend is up and running!!!'));
 app.use('/tinder/user', tinderUsersRouter);
+app.use('/crypto', cryptoRouter);
 
 // Database connection and listener
 mongoose
