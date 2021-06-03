@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
 
 const cryptoSchema = mongoose.Schema({
-   coinName: String,
+   id: {
+      type: String,
+      default: Date.now(),
+   },
+   name: String,
    symbol: String,
    current_price: Number,
    market_cap: Number,
